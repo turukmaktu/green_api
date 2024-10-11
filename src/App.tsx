@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import {Credentials} from "./Credentials";
 import {useState} from "react";
 import {Output} from "./Output";
+import {GetSettingsButton} from "./GetSettingsButton";
 
 function App() {
 
@@ -13,6 +14,15 @@ function App() {
 
   const [idInstance, setIdInstance] = useState('');
   const [apiTokenInstance, setApiTokenInstance] = useState('');
+
+  const handleError = (error: string) => {
+    setOutputError(true);
+    setOutputData(error);
+    setTimeout(() => {
+      setOutputError(false);
+      setOutputData('')
+    }, 2000);
+  }
 
   return (
     <Container>
@@ -30,7 +40,12 @@ function App() {
                   ></Credentials>
                 </Grid>
                 <Grid size={12}>
-                  todo create get settings button
+                  <GetSettingsButton
+                      idInstance={idInstance}
+                      apiTokenInstance={apiTokenInstance}
+                      setData={setOutputData}
+                      setError={handleError}
+                  />
                 </Grid>
                 <Grid size={12}>
                   todo create get instance button
