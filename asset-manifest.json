@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/test_gren_api/static/js/main.c6616782.js",
+    "main.js": "/test_gren_api/static/js/main.e1edf275.js",
     "static/js/453.a6a97343.chunk.js": "/test_gren_api/static/js/453.a6a97343.chunk.js",
     "index.html": "/test_gren_api/index.html",
-    "main.c6616782.js.map": "/test_gren_api/static/js/main.c6616782.js.map",
+    "main.e1edf275.js.map": "/test_gren_api/static/js/main.e1edf275.js.map",
     "453.a6a97343.chunk.js.map": "/test_gren_api/static/js/453.a6a97343.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.c6616782.js"
+    "static/js/main.e1edf275.js"
   ]
 }
