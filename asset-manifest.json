@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/test_gren_api/static/js/main.2b7955b8.js",
+    "static/js/453.a6a97343.chunk.js": "/test_gren_api/static/js/453.a6a97343.chunk.js",
+    "index.html": "/test_gren_api/index.html",
+    "main.2b7955b8.js.map": "/test_gren_api/static/js/main.2b7955b8.js.map",
+    "453.a6a97343.chunk.js.map": "/test_gren_api/static/js/453.a6a97343.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2b7955b8.js"
+  ]
+}
