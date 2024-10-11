@@ -2,8 +2,14 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import Container from "@mui/material/Container";
 import Paper from '@mui/material/Paper';
+import {Credentials} from "./Credentials";
+import {useState} from "react";
 
 function App() {
+
+  const [idInstance, setIdInstance] = useState('');
+  const [apiTokenInstance, setApiTokenInstance] = useState('');
+
   return (
     <Container>
       <Box sx={{ flexGrow: 1 }}>
@@ -12,7 +18,12 @@ function App() {
             <Paper>
               <Grid container spacing={1}>
                 <Grid size={12}>
-                  todo create credentials input
+                  <Credentials
+                      idInstance={idInstance}
+                      setIdInstance={setIdInstance}
+                      apiTokenInstance={apiTokenInstance}
+                      setTokenInstance={setApiTokenInstance}
+                  ></Credentials>
                 </Grid>
                 <Grid size={12}>
                   todo create get settings button
