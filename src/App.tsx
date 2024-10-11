@@ -4,8 +4,12 @@ import Container from "@mui/material/Container";
 import Paper from '@mui/material/Paper';
 import {Credentials} from "./Credentials";
 import {useState} from "react";
+import {Output} from "./Output";
 
 function App() {
+
+  const [outputError, setOutputError] = useState(false);
+  const [outputData, setOutputData] = useState('');
 
   const [idInstance, setIdInstance] = useState('');
   const [apiTokenInstance, setApiTokenInstance] = useState('');
@@ -41,7 +45,7 @@ function App() {
             </Paper>
           </Grid>
           <Grid size={6}>
-            todo create output component
+            <Output error={outputError} text={outputData}/>
           </Grid>
         </Grid>
       </Box>
