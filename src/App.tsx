@@ -6,6 +6,8 @@ import {Credentials} from "./Credentials";
 import {useState} from "react";
 import {Output} from "./Output";
 import {GetSettingsButton} from "./GetSettingsButton";
+import {GetStateInstanceButton} from "./GetStateInstanceButton";
+import {SendMessage} from "./SendMessage";
 
 function App() {
 
@@ -48,10 +50,20 @@ function App() {
                   />
                 </Grid>
                 <Grid size={12}>
-                  todo create get instance button
+                  <GetStateInstanceButton
+                      idInstance={idInstance}
+                      apiTokenInstance={apiTokenInstance}
+                      setData={setOutputData}
+                      setError={handleError}
+                  />
                 </Grid>
                 <Grid size={12}>
-                  todo create send message component
+                  <SendMessage
+                      idInstance={idInstance}
+                      apiTokenInstance={apiTokenInstance}
+                      setData={setOutputData}
+                      setError={handleError}
+                  />
                 </Grid>
                 <Grid size={12}>
                   todo create sed file by url component
