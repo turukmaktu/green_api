@@ -6,4 +6,4 @@
 - [x] create response output components
 - [x] create get instance button component
 - [x] create send message component
-- [ ] create send file by url component
+- [x] create send file by url component

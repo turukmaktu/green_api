@@ -8,6 +8,7 @@ import {Output} from "./Output";
 import {GetSettingsButton} from "./GetSettingsButton";
 import {GetStateInstanceButton} from "./GetStateInstanceButton";
 import {SendMessage} from "./SendMessage";
+import {SendFileByUrl} from "./SendFileByUrl";
 
 function App() {
 
@@ -66,7 +67,12 @@ function App() {
                   />
                 </Grid>
                 <Grid size={12}>
-                  todo create sed file by url component
+                  <SendFileByUrl
+                      idInstance={idInstance}
+                      apiTokenInstance={apiTokenInstance}
+                      setData={setOutputData}
+                      setError={handleError}
+                  />
                 </Grid>
               </Grid>
             </Paper>

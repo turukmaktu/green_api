@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Button, Box, Grid2 as Grid, TextField} from "@mui/material";
 import {useState} from 'react';
 
-export function SendMessage(props: {
+export function SendFileByUrl(props: {
     idInstance: string,
     apiTokenInstance: string,
     setData(data: string): void,
@@ -10,11 +10,12 @@ export function SendMessage(props: {
 }) {
 
     const [chatId, setChatId] = useState('');
-    const [message, setMessage] = useState('');
+    const [urlFile, setUrlFile] = useState('');
+    const [fileName, setFileName] = useState('');
     const handle = () => {
         try {
             fetch(
-                `${process.env.REACT_APP_GREEN_API_HOST}/waInstance${props.idInstance}/sendMessage/${props.apiTokenInstance}`,
+                `${process.env.REACT_APP_GREEN_API_HOST}/waInstance${props.idInstance}/sendFileByUrl/${props.apiTokenInstance}`,
                 {
                     method: 'POST',
                     headers: {
@@ -22,7 +23,8 @@ export function SendMessage(props: {
                     },
                     body: JSON.stringify({
                         chatId,
-                        message,
+                        urlFile,
+                        fileName
                     })
                 }
             )
@@ -43,12 +45,15 @@ export function SendMessage(props: {
     };
 
     return (
-        <Box sx={{ p: 2}}>
+        <Box
+            component="section"
+            sx={{ p: 2}}
+        >
             <Grid container spacing={2}>
                 <Grid size={12}>
                     <TextField
                         fullWidth
-                        data-testid="send_message_chat_id"
+                        id="send_file_by_url_chat_id"
                         label="chatId"
                         variant="outlined"
                         value={chatId}
@@ -59,27 +64,38 @@ export function SendMessage(props: {
                 </Grid>
                 <Grid size={12}>
                     <TextField
+                        fullWidth
+                        id="send_file_by_url_url"
+                        label="fileUrl"
+                        variant="outlined"
+                        value={urlFile}
+                        onChange={(event) => {
+                            setUrlFile(event.target.value);
+                        }}
+                    />
+                </Grid>
+                <Grid size={12}>
+                    <TextField
                         multiline
                         maxRows={4}
                         fullWidth
-                        data-testid="send_message_message"
-                        label="Message"
+                        id="send_file_by_url_file_name"
+                        label="fileName"
                         variant="outlined"
-                        value={message}
+                        value={fileName}
                         onChange={(event) => {
-                            setMessage(event.target.value);
+                            setFileName(event.target.value);
                         }}
                     />
                 </Grid>
                 <Grid size={12}>
                     <Button
-                        data-testid='send_message_action'
                         color='primary'
                         variant='outlined'
                         fullWidth
                         onClick={handle}
                     >
-                        sendMessage
+                        sendFileByUrl
                     </Button>
                 </Grid>
             </Grid>
